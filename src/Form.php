@@ -5,32 +5,72 @@ namespace ComponentUI;
 class Form extends Init
 {
 
-    private $type = [
-        'text', 
-        'number',
-        'textarea',
-        'dropdown',
-        'radio',
-        'checkbox'
-    ];
-    private $name;
-    private $value;
+    private $name; 
+    private $value; // value or selected or checked
     private $attr_plus;
-    private $view_type;
+    private $placeholder;
 
-    public function __construct($config = [])
+    // special for input
+    private $type;
+
+    // for view 
+    private $class = [
+        'input' => ''
+    ];
+    private $label;
+    private $view_type = '';
+
+    // element support 
+    private $description;
+    private $message_error;
+
+    public function __construct()
     {
-        // type
-        if(!isset($config['type']) || $this->type[$config['type']]){
-            return $this->_showError("FT0001", "Your selected framework is not available");
-        }
-
-        // 
+        parent::__construct();
     }
 
-    public function input()
+    public function input($param = [])
+    {
+        $this->_setDefaultParam($param);
+
+        $this->type = !empty($param['type']) ? $param['type'] : 'text';
+
+        include $this->template_path . "input.php";
+    }
+
+    public function dropdown()
     {
         
+    }
+
+    private function _setDefaultParam($param = [])
+    {
+        $this->name = !empty($param['name']) ? $param['name'] : '';
+        $this->value = !empty($param['value']) ? $param['value'] : '';
+        $this->attr_plus = !empty($param['attr_plus']) ? $param['attr_plus'] : '';
+        $this->label = !empty($param['label']) ? $param['label'] : '';
+        $this->view_type = !empty($param['view_type']) ? $param['view_type'] : '';
+        $this->class['input'] = !empty($param['class']['input']) ? $param['class']['input'] : '';
+        if(isset($param['description'])) $this->description = $param['description'];
+        if(isset($param['message_error'])) $this->message_error = $param['message_error'];
+    }
+
+    private function _elmMsgError()
+    {
+        if(!empty($this->message_error)):
+            echo '<div class="invalid-feedback" style="display: block;">';
+            echo $this->message_error;
+            echo '</div>';
+        endif; 
+    }
+
+    private function _elmDescription()
+    {
+        if(!empty($this->description)):
+            echo '<small class="form-text text-muted">';
+            echo $this->description; 
+            echo '</small>';
+        endif; 
     }
 
 }
