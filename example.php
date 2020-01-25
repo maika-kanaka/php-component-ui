@@ -14,3 +14,9 @@ $form->input([
     'description' => 'Your fullname here',
     'message_error' => '' // validation message here 
 ]);
+
+use ComponentUI\Alert;
+
+$alert = new Alert();
+$message = $alert->danger('asd');
+echo $message;
