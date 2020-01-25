@@ -38,7 +38,7 @@ class Init
         }
 
         // create for template path
-        $this->template_path = $_SERVER['DOCUMENT_ROOT'] ."/". 
+        $this->template_path = dirname(__FILE__) ."/". 
                                $config['framework']['name'] ."/". 
                                $config['framework']['version'] ."/";
     }
