@@ -5,7 +5,7 @@
 <div class="form-group">
     <label> <?php echo $this->label; ?> </label>
 
-    <input class="form-control <?php echo $this->class['input']; ?>" value="<?php echo $this->value; ?>" name="<?php echo $this->name; ?>" placeholder="<?php echo $this->placeholder; ?>" type="<?php echo $this->type; ?>" <?php echo $this->attr_plus; ?>>
+    <?php include $this->template_path . 'input-elm.php'; ?>
 
     <?php $this->_elmDescription(); ?>
 
@@ -22,7 +22,7 @@
     </label>
 
     <div class="col-sm-8">
-        <input class="form-control <?php echo $this->class['input']; ?>" value="<?php echo $this->value; ?>" name="<?php echo $this->name; ?>" placeholder="<?php echo $this->placeholder; ?>" type="<?php echo $this->type; ?>" <?php echo $this->attr_plus; ?>>
+        <?php include $this->template_path . 'input-elm.php'; ?>
 
         <?php $this->_elmDescription(); ?>
 

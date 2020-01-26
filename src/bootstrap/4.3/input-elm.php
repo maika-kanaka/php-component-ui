@@ -1,0 +1,1 @@
+<input class="form-control <?php echo $this->class['input']; ?>" value="<?php echo $this->value; ?>" name="<?php echo $this->name; ?>" placeholder="<?php echo $this->placeholder; ?>" type="<?php echo $this->type; ?>" <?php echo $this->attr_plus; ?>>
