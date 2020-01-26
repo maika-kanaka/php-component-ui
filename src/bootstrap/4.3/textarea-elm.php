@@ -1,0 +1,1 @@
+<textarea class="form-control" name="<?php echo $this->name; ?>" <?php echo $this->attr_plus; ?>><?php echo $this->value; ?></textarea>

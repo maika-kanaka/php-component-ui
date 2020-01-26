@@ -32,7 +32,7 @@ class Form extends Init
         parent::__construct();
     }
 
-    public function input($param = [])
+    public function input($param = []): void
     {
         $this->_setDefaultParam($param);
 
@@ -41,7 +41,23 @@ class Form extends Init
         include $this->template_path . "input.php";
     }
 
-    public function dropdown($param = [])
+    public function textarea($param = []): void
+    {
+        $this->_setDefaultParam($param);
+
+        include $this->template_path . "input.php";
+    }
+
+    public function radio($param = []): void
+    {
+        $this->_setDefaultParam($param);
+
+        $this->options = !empty($param['options']) ? $param['options'] : [];
+
+        include $this->template_path . "radio.php";
+    }
+
+    public function dropdown($param = []): void
     {
         $this->_setDefaultParam($param);
 
@@ -56,7 +72,7 @@ class Form extends Init
         include $this->template_path . "dropdown.php";
     }
 
-    private function _setDefaultParam($param = [])
+    private function _setDefaultParam($param = []): void
     {
         $this->name = !empty($param['name']) ? $param['name'] : '';
         $this->value = !empty($param['value']) ? $param['value'] : '';
@@ -68,7 +84,7 @@ class Form extends Init
         if(isset($param['message_error'])) $this->message_error = $param['message_error'];
     }
 
-    private function _elmMsgError()
+    private function _elmMsgError(): void
     {
         if(!empty($this->message_error)):
             echo '<div class="invalid-feedback" style="display: block;">';
@@ -77,7 +93,7 @@ class Form extends Init
         endif; 
     }
 
-    private function _elmDescription()
+    private function _elmDescription(): void
     {
         if(!empty($this->description)):
             echo '<small class="form-text text-muted">';
