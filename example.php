@@ -5,15 +5,15 @@ include 'vendor/autoload.php';
 use ComponentUI\Form;
 
 $form = new Form();
-// $form->input([
-//     'label' => 'Fullname',
-//     'name' => 'fullname',
-//     'value' => 'Maika Kanaka',
-//     'view_type' => 'horizontal',
+$form->input([
+    'label' => 'Fullname',
+    'name' => 'fullname',
+    'value' => 'Maika Kanaka',
+    'view_type' => 'horizontal',
 
-//     'description' => 'Your fullname here',
-//     'message_error' => '' // validation message here 
-// ]);
+    'description' => 'Your fullname here',
+    'message_error' => '' // validation message here 
+]);
 
 $form->textarea([
     'label' => 'Fullname',
@@ -25,28 +25,41 @@ $form->textarea([
     'message_error' => '' // validation message here 
 ]);
 
-// $options = [
-//     ['value' => 'monday', 'label' => 'Monday', 'sub-text' => 'Bad day'],
-//     ['value' => 'tuesday', 'label' => 'Tuesday', 'sub-text' => 'Fight ....'],
-//     ['value' => 'wednesday', 'label' => 'Wednesday', 'sub-text' => null],
-// ];
-// $form->dropdown([
-//     'label' => 'Day',
-//     'name' => 'day',
-//     'options' => $options,
-//     'value' => 'tuesday'
-// ]);
+$options = [
+    ['value' => 'monday', 'label' => 'Monday', 'sub-text' => 'Bad day'],
+    ['value' => 'tuesday', 'label' => 'Tuesday', 'sub-text' => 'Fight ....'],
+    ['value' => 'wednesday', 'label' => 'Wednesday', 'sub-text' => null],
+];
+$form->dropdown([
+    'label' => 'Day',
+    'name' => 'day',
+    'options' => $options,
+    'value' => 'tuesday'
+]);
 
-// $options = ['M' => 'Male', 'F' => 'Female', 'O' => 'Other'];
-// $form->radio([
-//     'label' => 'Gender',
-//     'name' => 'gender',
-//     'options' => $options,
-//     'value' => 'F'
-// ]);
+$options = [
+    ['value' => 'monday', 'label' => 'Monday', 'sub-text' => 'Bad day'],
+    ['value' => 'tuesday', 'label' => 'Tuesday', 'sub-text' => 'Fight ....'],
+    ['value' => 'wednesday', 'label' => 'Wednesday', 'sub-text' => null],
+];
+$form->checkbox([
+    'label' => 'Day',
+    'name' => 'day',
+    'options' => $options,
+    'view_type' => 'row',
+    'value' => ['tuesday', 'monday']
+]);
 
-// use ComponentUI\Alert;
+$options = ['M' => 'Male', 'F' => 'Female', 'O' => 'Other'];
+$form->radio([
+    'label' => 'Gender',
+    'name' => 'gender',
+    'options' => $options,
+    'value' => 'F'
+]);
 
-// $alert = new Alert();
-// $message = $alert->danger('asd');
-// echo $message;
+use ComponentUI\Alert;
+
+$alert = new Alert();
+$message = $alert->danger('asd');
+echo $message;

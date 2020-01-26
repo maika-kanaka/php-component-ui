@@ -57,6 +57,16 @@ class Form extends Init
         include $this->template_path . "radio.php";
     }
 
+    public function checkbox($param = []): void
+    {
+        $this->_setDefaultParam($param);
+
+        $this->options = !empty($param['options']) ? $param['options'] : [];
+        $selected_by = !empty($param['selected_by']) ? $param['selected_by'] : 'value';
+
+        include $this->template_path . "checkbox.php";
+    }
+
     public function dropdown($param = []): void
     {
         $this->_setDefaultParam($param);
