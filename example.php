@@ -15,6 +15,17 @@ $form->input([
     'message_error' => '' // validation message here 
 ]);
 
+$options = [
+    ['value' => 'monday', 'label' => 'Monday', 'sub-text' => 'Bad day'],
+    ['value' => 'tuesday', 'label' => 'Tuesday', 'sub-text' => 'Fight ....'],
+];
+$form->dropdown([
+    'label' => 'Day',
+    'name' => 'day',
+    'options' => $options,
+    'value' => 'tuesday'
+]);
+
 use ComponentUI\Alert;
 
 $alert = new Alert();

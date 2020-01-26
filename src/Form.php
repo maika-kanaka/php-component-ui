@@ -13,6 +13,9 @@ class Form extends Init
     // special for input
     private $type;
 
+    // special for dropdown
+    private $options;
+
     // for view 
     private $class = [
         'input' => ''
@@ -38,9 +41,19 @@ class Form extends Init
         include $this->template_path . "input.php";
     }
 
-    public function dropdown()
+    public function dropdown($param = [])
     {
-        
+        $this->_setDefaultParam($param);
+
+        $this->options = !empty($param['options']) ? $param['options'] : [];
+        if( !empty($param['data_live_search']) && $param['data_live_search'] === True ){
+            $data_live_search = 'data-live-search="true"';
+            $this->class['input'] .= " chosen-select selectpicker";
+        }else{
+            $data_live_search = "";
+        }
+
+        include $this->template_path . "dropdown.php";
     }
 
     private function _setDefaultParam($param = [])
