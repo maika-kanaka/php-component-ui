@@ -25,7 +25,7 @@ class Modal extends Init
 
     private function _setParamDefault($param = [])
     {
-        $this->modal_id           = !empty($param['id']) ? $param['id'] : '';
+        $this->id                 = !empty($param['id']) ? $param['id'] : '';
         $this->title              = !empty($param['title']) ? $param['title'] : 'Confirmation Delete';
         $this->description        = !empty($param['description']) ? $param['description'] : 'Are you sure to delete this data ?';
         $this->reason_placeholder = !empty($param['reason_placeholder']) ? $param['reason_placeholder'] : '';
