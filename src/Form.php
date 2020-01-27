@@ -32,7 +32,7 @@ class Form extends Init
         parent::__construct();
     }
 
-    public function input($param = []): void
+    public function input($param = [])
     {
         $this->_setDefaultParam($param);
 
@@ -41,14 +41,14 @@ class Form extends Init
         include $this->template_path . "input.php";
     }
 
-    public function textarea($param = []): void
+    public function textarea($param = [])
     {
         $this->_setDefaultParam($param);
 
         include $this->template_path . "input.php";
     }
 
-    public function radio($param = []): void
+    public function radio($param = [])
     {
         $this->_setDefaultParam($param);
 
@@ -57,7 +57,7 @@ class Form extends Init
         include $this->template_path . "radio.php";
     }
 
-    public function checkbox($param = []): void
+    public function checkbox($param = [])
     {
         $this->_setDefaultParam($param);
 
@@ -67,7 +67,7 @@ class Form extends Init
         include $this->template_path . "checkbox.php";
     }
 
-    public function dropdown($param = []): void
+    public function dropdown($param = [])
     {
         $this->_setDefaultParam($param);
 
@@ -82,7 +82,7 @@ class Form extends Init
         include $this->template_path . "dropdown.php";
     }
 
-    private function _setDefaultParam($param = []): void
+    private function _setDefaultParam($param = [])
     {
         $this->name = !empty($param['name']) ? $param['name'] : '';
         $this->value = !empty($param['value']) ? $param['value'] : '';
@@ -94,7 +94,7 @@ class Form extends Init
         if(isset($param['message_error'])) $this->message_error = $param['message_error'];
     }
 
-    private function _elmMsgError(): void
+    private function _elmMsgError()
     {
         if(!empty($this->message_error)):
             echo '<div class="invalid-feedback" style="display: block;">';
@@ -103,7 +103,7 @@ class Form extends Init
         endif; 
     }
 
-    private function _elmDescription(): void
+    private function _elmDescription()
     {
         if(!empty($this->description)):
             echo '<small class="form-text text-muted">';

@@ -12,42 +12,42 @@ class Alert extends Init
         parent::__construct();
     }
 
-    public function success($message = ''): string
+    public function success($message = '')
     {
         $type = 'success';
         include $this->template_path . "alert.php";
         return ob_get_clean();
     }
 
-    public function primary($message = ''): string
+    public function primary($message = '')
     {
         $type = 'primary';
         include $this->template_path . "alert.php";
         return ob_get_clean();
     }
 
-    public function secondary($message = ''): string
+    public function secondary($message = '')
     {
         $type = 'secondary';
         include $this->template_path . "alert.php";
         return ob_get_clean();
     }
 
-    public function warning($message = ''): string
+    public function warning($message = '')
     {
         $type = 'warning';
         include $this->template_path . "alert.php";
         return ob_get_clean();
     }
 
-    public function light($message = ''): string
+    public function light($message = '')
     {
         $type = 'light';
         include $this->template_path . "alert.php";
         return ob_get_clean();
     }
 
-    public function danger($message = ''): string
+    public function danger($message = '')
     {
         $type = 'danger';
         include $this->template_path . "alert.php";
