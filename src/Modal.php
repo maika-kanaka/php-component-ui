@@ -25,6 +25,8 @@ class Modal extends Init
 
     private function _setParamDefault($param = [])
     {
+        $this->csrf               = !empty($param['csrf']) ? $param['csrf'] : '';
+
         $this->id                 = !empty($param['id']) ? $param['id'] : '';
         $this->title              = !empty($param['title']) ? $param['title'] : 'Confirmation Delete';
         $this->description        = !empty($param['description']) ? $param['description'] : 'Are you sure to delete this data ?';
