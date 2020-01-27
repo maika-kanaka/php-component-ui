@@ -39,6 +39,9 @@ class Form extends Init
         $this->type = !empty($param['type']) ? $param['type'] : 'text';
 
         include $this->template_path . "input.php";
+
+        // reset param to default
+        $this->_setDefaultParam([]);
     }
 
     public function textarea($param = [])
@@ -46,6 +49,9 @@ class Form extends Init
         $this->_setDefaultParam($param);
 
         include $this->template_path . "input.php";
+
+        // reset param to default
+        $this->_setDefaultParam([]);
     }
 
     public function radio($param = [])
@@ -55,6 +61,9 @@ class Form extends Init
         $this->options = !empty($param['options']) ? $param['options'] : [];
 
         include $this->template_path . "radio.php";
+
+        // reset param to default
+        $this->_setDefaultParam([]);
     }
 
     public function checkbox($param = [])
@@ -65,6 +74,9 @@ class Form extends Init
         $selected_by = !empty($param['selected_by']) ? $param['selected_by'] : 'value';
 
         include $this->template_path . "checkbox.php";
+
+        // reset param to default
+        $this->_setDefaultParam([]);
     }
 
     public function dropdown($param = [])
@@ -80,6 +92,9 @@ class Form extends Init
         }
 
         include $this->template_path . "dropdown.php";
+
+        // reset param to default
+        $this->_setDefaultParam([]);
     }
 
     private function _setDefaultParam($param = [])
@@ -90,8 +105,9 @@ class Form extends Init
         $this->label = !empty($param['label']) ? $param['label'] : '';
         $this->view_type = !empty($param['view_type']) ? $param['view_type'] : '';
         $this->class['input'] = !empty($param['class']['input']) ? $param['class']['input'] : '';
-        if(isset($param['description'])) $this->description = $param['description'];
-        if(isset($param['message_error'])) $this->message_error = $param['message_error'];
+
+        $this->description = !empty($param['description']) ? $param['description'] : '';
+        $this->message_error = !empty($param['message_error']) ? $param['message_error'] : '';
     }
 
     private function _elmMsgError()
