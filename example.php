@@ -63,3 +63,8 @@ use ComponentUI\Alert;
 $alert = new Alert();
 $message = $alert->danger('asd');
 echo $message;
+
+use ComponentUI\Modal;
+
+$modal = new Modal;
+$modal->confirmation();
