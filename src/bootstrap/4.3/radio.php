@@ -1,4 +1,4 @@
-<?php if($view_as == ''): ?>
+<?php if($this->view_type == ''): ?>
 
 <div class="form-group">
   <label> <?php echo $this->label; ?> </label>
@@ -10,7 +10,7 @@
   <?php $this->_elmMsgError(); ?>
 </div>
 
-<?php elseif($view_as == 'horizontal'): ?>
+<?php elseif($this->view_type == 'horizontal'): ?>
 
 <div class="form-group">
   <div class="row">
