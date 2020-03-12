@@ -103,6 +103,7 @@ class Form extends Init
         $this->value = !empty($param['value']) ? $param['value'] : '';
         $this->attr_plus = !empty($param['attr_plus']) ? $param['attr_plus'] : '';
         $this->label = !empty($param['label']) ? $param['label'] : '';
+        $this->placeholder = !empty($param['placeholder']) ? $param['placeholder'] : '';
         $this->view_type = !empty($param['view_type']) ? $param['view_type'] : '';
         $this->class['input'] = !empty($param['class']['input']) ? $param['class']['input'] : '';
 
