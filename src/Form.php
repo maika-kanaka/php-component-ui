@@ -48,7 +48,7 @@ class Form extends Init
     {
         $this->_setDefaultParam($param);
 
-        include $this->template_path . "input.php";
+        include $this->template_path . "textarea.php";
 
         // reset param to default
         $this->_setDefaultParam([]);
